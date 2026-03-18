@@ -6,6 +6,7 @@
 
 @if (Model.PropertyItem != null)
 {
+    // Hero section with image slider and booking button 
     <section class="hero">
 
         <div class="slider">
@@ -25,6 +26,7 @@
 
     </section>
 
+    // Feature cards showing key guest house benefits 
     <section class="features">
         <h2>Why Stay With Us?</h2>
 
@@ -53,6 +55,7 @@
         </div>
     </section>
 
+    // Dynamic property information loaded from database 
     <section class="property-summary">
         <h2>@Model.PropertyItem.Title</h2>
         <p>@Model.PropertyItem.Description</p>
@@ -65,6 +68,7 @@
         </p>
     </section>
 
+    // Testimonial slider section 
     <section class="testimonials">
         <h2>What Our Guests Say</h2>
 

@@ -1,7 +1,10 @@
 ﻿@page
 @model CO5078_GuestHouse_Dynamic.Pages.Admin.AdminModel
 
+ // Validation summary for admin form 
 <div asp-validation-summary="All" style="color:red;"></div>
+
+// Admin form for adding new property details  
 <section class="contact-box">
     <h2>Admin Panel</h2>
 
@@ -44,6 +47,7 @@
     </form>
 </section>
 
+// Table showing all properties stored in database 
 <section class="contact-box">
     <h3>Property List</h3>
 
@@ -73,6 +77,7 @@
         }
     </table>
 </section>
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
