@@ -1,0 +1,52 @@
+﻿@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Coastal Breeze Guest House</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CO5078_GuestHouse_Dynamic.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+    <header class="site-header">
+
+        <h1>Coastal Breeze Guest House</h1>
+
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/Gallery">About & Gallery</a></li>
+                <li><a href="/Contact">Contact</a></li>
+
+                @if (Context.Session.GetString("AdminUser") == null)
+                {
+                    <li><a href="/Login">Login</a></li>
+                }
+                else
+                {
+                    <li><a href="/Admin/Admin">Admin</a></li>
+                    <li><a href="/Logout">Logout</a></li>
+                }
+
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <main>
+        @RenderBody()
+    </main>
+
+
+    <footer>
+        <p>&copy; 2026 Coastal Breeze Guest House | Cornwall, UK</p>
+    </footer>
+
+    @RenderSection("Scripts", required: false)
+    <script src="~/js/site.js"></script>
+</body>
+</html>

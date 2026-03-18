@@ -1,0 +1,23 @@
+﻿@page
+@model CO5078_GuestHouse_Dynamic.Pages.LoginModel
+
+<h1>Admin Login</h1>
+
+<form method="post">
+    <p>
+        Email<br />
+        <input asp-for="Email" />
+    </p>
+
+    <p>
+        Password<br />
+        <input asp-for="Password" type="password" />
+    </p>
+
+    <button type="submit">Login</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <p style="color:red;">@Model.Message</p>
+}

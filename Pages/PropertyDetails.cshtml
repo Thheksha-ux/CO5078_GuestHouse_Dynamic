@@ -1,0 +1,38 @@
+﻿@page
+@model CO5078_GuestHouse_Dynamic.Pages.PropertyDetailsModel
+
+<section class="property-summary">
+    <h1>Property Details</h1>
+
+    @if (Model.PropertyItem != null)
+    {
+        <h2>@Model.PropertyItem.Title</h2>
+
+        <img src="@Model.PropertyItem.MainImage" alt="Property Image" width="600" />
+
+        <p>@Model.PropertyItem.Description</p>
+
+        <p><strong>Location:</strong> @Model.PropertyItem.Location</p>
+        <p><strong>Price Per Night:</strong> £@Model.PropertyItem.PricePerNight</p>
+        <p><strong>Features:</strong> @Model.PropertyItem.Features</p>
+
+        @if (Model.Images.Count > 0)
+        {
+            <h3>More Images</h3>
+
+            <section class="gallery">
+                @foreach (var image in Model.Images)
+                {
+                    <div class="gallery-item">
+                        <img src="@image.ImagePath" alt="@image.Caption" />
+                        <div class="overlay">@image.Caption</div>
+                    </div>
+                }
+            </section>
+        }
+    }
+    else
+    {
+        <p>No property found.</p>
+    }
+</section>

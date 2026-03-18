@@ -1,0 +1,37 @@
+﻿@page
+@model CO5078_GuestHouse_Dynamic.Pages.GalleryModel
+
+<section class="about-box">
+    <h2>About Coastal Breeze Guest House</h2>
+    <p>
+        Coastal Breeze Guest House is a peaceful seaside retreat nestled along the beautiful Cornwall coastline.
+        Our guest house offers comfortable accommodation, breathtaking ocean views, and modern amenities,
+        creating the perfect environment for relaxation and unforgettable coastal experiences.
+    </p>
+</section>
+
+<div class="gallery-intro">
+    <h2>Discover Coastal Comfort</h2>
+    <p>
+        Take a glimpse into the relaxing experience awaiting you at Coastal Breeze Guest House.
+        Our gallery highlights the comfort of our rooms, scenic coastal surroundings,
+        and the peaceful atmosphere designed for your perfect seaside escape.
+    </p>
+</div>
+
+<section class="gallery">
+    @if (Model.Images != null && Model.Images.Count > 0)
+    {
+        foreach (var image in Model.Images)
+        {
+            <div class="gallery-item">
+                <img src="@image.ImagePath" alt="@image.Caption" />
+                <div class="overlay">@image.Caption</div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>No images found.</p>
+    }
+</section>

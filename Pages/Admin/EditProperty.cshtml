@@ -1,0 +1,42 @@
+﻿@page
+@model CO5078_GuestHouse_Dynamic.Pages.Admin.EditPropertyModel
+
+<h1>Edit Property</h1>
+
+<form method="post">
+
+    <input type="hidden" asp-for="PropertyItem.Id" />
+
+    <p>
+        Title<br />
+        <input asp-for="PropertyItem.Title" />
+    </p>
+
+    <p>
+        Description<br />
+        <input asp-for="PropertyItem.Description" />
+    </p>
+
+    <p>
+        Location<br />
+        <input asp-for="PropertyItem.Location" />
+    </p>
+
+    <p>
+        Price Per Night<br />
+        <input asp-for="PropertyItem.PricePerNight" />
+    </p>
+
+    <p>
+        Main Image<br />
+        <input asp-for="PropertyItem.MainImage" />
+    </p>
+
+    <p>
+        Features<br />
+        <input asp-for="PropertyItem.Features" />
+    </p>
+
+    <button type="submit">Update Property</button>
+
+</form>

@@ -1,0 +1,92 @@
+﻿@page
+@model CO5078_GuestHouse_Dynamic.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+@if (Model.PropertyItem != null)
+{
+    <section class="hero">
+
+        <div class="slider">
+            <img class="slide active" src="/images/exterior.jpg" alt="Guest House Exterior" />
+            <img class="slide" src="/images/room.jpg" alt="Guest Room Interior" />
+            <img class="slide" src="/images/beach.jpg" alt="Cornwall Beach View" />
+        </div>
+
+        <div class="hero-text">
+            <h2>Experience Comfort by the Sea</h2>
+            <p>
+                Located in beautiful Cornwall, Coastal Breeze Guest House offers
+                relaxing seaside accommodation with modern comfort and stunning ocean views.
+            </p>
+            <a href="/Contact" class="btn">Book Now</a>
+        </div>
+
+    </section>
+
+    <section class="features">
+        <h2>Why Stay With Us?</h2>
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+                <h3>Beach Location</h3>
+                <p>Only a short walk to Cornwall’s beautiful coastline.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Free Wi-Fi</h3>
+                <p>Stay connected with fast and reliable internet.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Private Parking</h3>
+                <p>Secure and convenient parking for all guests.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Family Friendly</h3>
+                <p>Comfortable accommodation suitable for everyone.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="property-summary">
+        <h2>@Model.PropertyItem.Title</h2>
+        <p>@Model.PropertyItem.Description</p>
+        <p><strong>Location:</strong> @Model.PropertyItem.Location</p>
+        <p><strong>Price Per Night:</strong> £@Model.PropertyItem.PricePerNight</p>
+        <p><strong>Features:</strong> @Model.PropertyItem.Features</p>
+
+        <p>
+            <a href="/PropertyDetails" class="btn">View Property Details</a>
+        </p>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Our Guests Say</h2>
+
+        <div class="testimonial-slider">
+            <div class="testimonial active">
+                <p>"Amazing stay with beautiful sea views. Highly recommended!"</p>
+                <p class="testimonial-name">– Sarah W.</p>
+            </div>
+
+            <div class="testimonial">
+                <p>"Very clean rooms and friendly service. Will visit again."</p>
+                <p class="testimonial-name">– James L.</p>
+            </div>
+
+            <div class="testimonial">
+                <p>"Perfect location near the beach. A relaxing experience."</p>
+                <p class="testimonial-name">– Emily R.</p>
+            </div>
+        </div>
+    </section>
+}
+else
+{
+    <p>No property details found.</p>
+}

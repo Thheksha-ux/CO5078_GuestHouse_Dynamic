@@ -1,0 +1,57 @@
+﻿@page
+@model CO5078_GuestHouse_Dynamic.Pages.ContactModel
+
+<section class="contact-box">
+    <h2>Contact Us</h2>
+
+    <p class="contact-subtitle">
+        We would love to hear from you. Whether you have a question,
+        need more information, or wish to make a reservation,
+        please send us a message and our team will respond shortly.
+    </p>
+
+    <form method="post">
+        <p>
+            <label>Name</label><br />
+            <input asp-for="Input.Name" />
+            <span asp-validation-for="Input.Name" style="color:red;"></span>
+        </p>
+
+        <p>
+            <label>Email</label><br />
+            <input asp-for="Input.Email" />
+            <span asp-validation-for="Input.Email" style="color:red;"></span>
+        </p>
+
+        <p>
+            <label>Message</label><br />
+            <textarea asp-for="Input.UserMessage" rows="5"></textarea>
+            <span asp-validation-for="Input.UserMessage" style="color:red;"></span>
+        </p>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+    @if (!string.IsNullOrEmpty(Model.Message))
+    {
+        <p style="color:green; font-weight:bold;">@Model.Message</p>
+    }
+</section>
+
+<section class="contact-box">
+    <h2>Find Us</h2>
+
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps?q=Cornwall,UK&output=embed"
+                width="600"
+                height="350"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+        </iframe>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

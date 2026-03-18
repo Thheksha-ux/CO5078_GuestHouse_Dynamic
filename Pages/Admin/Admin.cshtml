@@ -1,0 +1,78 @@
+﻿@page
+@model CO5078_GuestHouse_Dynamic.Pages.Admin.AdminModel
+
+<div asp-validation-summary="All" style="color:red;"></div>
+<section class="contact-box">
+    <h2>Admin Panel</h2>
+
+    <h3>Add New Property</h3>
+
+    <form method="post" enctype="multipart/form-data">
+
+        <p>
+            <label>Title</label><br />
+            <input asp-for="NewProperty.Title" />
+        </p>
+
+        <p>
+            <label>Description</label><br />
+            <input asp-for="NewProperty.Description" />
+        </p>
+
+        <p>
+            <label>Location</label><br />
+            <input asp-for="NewProperty.Location" />
+        </p>
+
+        <p>
+            <label>Price Per Night</label><br />
+            <input asp-for="NewProperty.PricePerNight" />
+        </p>
+
+        <p>
+            <label>Upload Image</label><br />
+            <input type="file" asp-for="UploadedImage" />
+        </p>
+
+        <p>
+            <label>Features</label><br />
+            <input asp-for="NewProperty.Features" />
+        </p>
+
+        <button type="submit">Add Property</button>
+
+    </form>
+</section>
+
+<section class="contact-box">
+    <h3>Property List</h3>
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Location</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var property in Model.Properties)
+        {
+            <tr>
+                <td>@property.Title</td>
+                <td>@property.Location</td>
+                <td>£@property.PricePerNight</td>
+                <td>
+                    <a asp-page="/Admin/EditProperty" asp-route-id="@property.Id" class="btn">Edit</a>
+
+                    <form method="post" asp-page-handler="Delete" style="display:inline;">
+                        <input type="hidden" name="id" value="@property.Id" />
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+</section>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
