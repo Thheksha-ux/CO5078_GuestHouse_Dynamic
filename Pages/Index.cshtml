@@ -6,13 +6,13 @@
 
 @if (Model.PropertyItem != null)
 {
-    @*Hero section with image slider and booking button*@ 
+    @* Hero section with image slider and booking button *@
     <section class="hero">
 
         <div class="slider">
-            <img class="slide active" src="/images/exterior.jpg" alt="Guest House Exterior" />
-            <img class="slide" src="/images/room.jpg" alt="Guest Room Interior" />
-            <img class="slide" src="/images/beach.jpg" alt="Cornwall Beach View" />
+            <img class="slide active" src="~/images/exterior.jpg" alt="Guest House Exterior" />
+            <img class="slide" src="~/images/room.jpg" alt="Guest Room Interior" />
+            <img class="slide" src="~/images/beach.jpg" alt="Cornwall Beach View" />
         </div>
 
         <div class="hero-text">
@@ -21,12 +21,12 @@
                 Located in beautiful Cornwall, Coastal Breeze Guest House offers
                 relaxing seaside accommodation with modern comfort and stunning ocean views.
             </p>
-            <a href="/Contact" class="btn">Book Now</a>
+            <a asp-page="/Contact" class="btn">Book Now</a>
         </div>
 
     </section>
 
-    @*Feature cards showing key guest house benefits *@ 
+    @* Feature cards showing key guest house benefits *@
     <section class="features">
         <h2>Why Stay With Us?</h2>
 
@@ -55,7 +55,7 @@
         </div>
     </section>
 
-    @*Dynamic property information loaded from database *@
+    @* Dynamic property information loaded from database *@
     <section class="property-summary">
         <h2>@Model.PropertyItem.Title</h2>
         <p>@Model.PropertyItem.Description</p>
@@ -64,11 +64,11 @@
         <p><strong>Features:</strong> @Model.PropertyItem.Features</p>
 
         <p>
-            <a href="/PropertyDetails" class="btn">View Property Details</a>
+            <a asp-page="/PropertyDetails" class="btn">View Property Details</a>
         </p>
     </section>
 
-    @*Testimonial slider section *@
+    @* Testimonial slider section *@
     <section class="testimonials">
         <h2>What Our Guests Say</h2>
 

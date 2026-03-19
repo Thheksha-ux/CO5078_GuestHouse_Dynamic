@@ -9,7 +9,7 @@
     {
         <h2>@Model.PropertyItem.Title</h2>
 
-        <img src="@Model.PropertyItem.MainImage" alt="Property Image" width="600" />
+        <img src="@Url.Content("~" + Model.PropertyItem.MainImage)" alt="Property Image" width="600" />
 
         <p>@Model.PropertyItem.Description</p>
 
@@ -26,7 +26,7 @@
                 @foreach (var image in Model.Images)
                 {
                     <div class="gallery-item">
-                        <img src="@image.ImagePath" alt="@image.Caption" />
+                        <img src="@Url.Content("~" + image.ImagePath)" alt="@image.Caption" />
                         <div class="overlay">@image.Caption</div>
                     </div>
                 }

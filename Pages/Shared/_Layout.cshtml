@@ -12,41 +12,36 @@
 <body>
 
     <header class="site-header">
-
         <h1>Coastal Breeze Guest House</h1>
 
         <nav>
             <ul class="nav-menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/Gallery">About & Gallery</a></li>
-                <li><a href="/Contact">Contact</a></li>
+                <li><a asp-page="/Index">Home</a></li>
+                <li><a asp-page="/Gallery">About & Gallery</a></li>
+                <li><a asp-page="/Contact">Contact</a></li>
 
                 @if (Context.Session.GetString("AdminUser") == null)
                 {
-                    <li><a href="/Login">Login</a></li>
+                    <li><a asp-page="/Login">Login</a></li>
                 }
                 else
                 {
-                    <li><a href="/Admin/Admin">Admin</a></li>
-                    <li><a href="/Logout">Logout</a></li>
+                    <li><a asp-page="/Admin/Admin">Admin</a></li>
+                    <li><a asp-page="/Logout">Logout</a></li>
                 }
-
             </ul>
         </nav>
-
     </header>
-
 
     <main>
         @RenderBody()
     </main>
-
 
     <footer>
         <p>&copy; 2026 Coastal Breeze Guest House | Cornwall, UK</p>
     </footer>
 
     @RenderSection("Scripts", required: false)
-    <script src="~/js/site.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 </html>
