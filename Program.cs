@@ -7,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 // Connect to SQL Server database
-builder.Services.AddDbContext<GuestHouseContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("GuestHouseConnection")));
+ builder.Services.AddDbContext<GuestHouseContext>(options =>
+     options.UseSqlServer(builder.Configuration.GetConnectionString("GuestHouseConnection")));
 
 // Enable session
 builder.Services.AddDistributedMemoryCache();
