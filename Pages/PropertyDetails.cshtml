@@ -3,11 +3,11 @@
 
 @*Property details section showing selected property information *@
 <section class="property-summary">
-    <h1>Property Details</h1>
+    <h2>Property Details</h2>
 
     @if (Model.PropertyItem != null)
     {
-        <h2>@Model.PropertyItem.Title</h2>
+        <h3>@Model.PropertyItem.Title</h3>
 
         <img src="@Url.Content("~" + Model.PropertyItem.MainImage)" alt="Property Image" width="600" />
 
@@ -23,6 +23,7 @@
 
             @*Additional gallery images related to the property*@ 
             <section class="gallery">
+            <h2>Property Gallery</h2>
                 @foreach (var image in Model.Images)
                 {
                     <div class="gallery-item">
