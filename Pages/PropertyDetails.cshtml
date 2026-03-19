@@ -1,7 +1,7 @@
 ﻿@page
 @model CO5078_GuestHouse_Dynamic.Pages.PropertyDetailsModel
 
-// Property details section showing selected property information 
+@*Property details section showing selected property information *@
 <section class="property-summary">
     <h1>Property Details</h1>
 
@@ -21,7 +21,7 @@
         {
             <h3>More Images</h3>
 
-            // Additional gallery images related to the property 
+            @*Additional gallery images related to the property*@ 
             <section class="gallery">
                 @foreach (var image in Model.Images)
                 {
