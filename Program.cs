@@ -3,19 +3,20 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services
 builder.Services.AddRazorPages();
 
+// Connect to SQL Server database
 builder.Services.AddDbContext<GuestHouseContext>(options =>
-    options.UseSqlServer(
-        builder.Configuration.GetConnectionString("GuestHouseConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("GuestHouseConnection")));
 
+// Enable session
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Error handling
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
